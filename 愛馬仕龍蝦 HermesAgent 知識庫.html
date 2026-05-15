@@ -1,0 +1,739 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>愛馬仕龍蝦 HermesAgent 知識庫.md</title>
+<meta http-equiv="Content-type" content="text/html;charset=UTF-8">
+
+<style>
+/* https://github.com/microsoft/vscode/blob/master/extensions/markdown-language-features/media/markdown.css */
+/*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+body {
+	font-family: var(--vscode-markdown-font-family, -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif);
+	font-size: var(--vscode-markdown-font-size, 14px);
+	padding: 0 26px;
+	line-height: var(--vscode-markdown-line-height, 22px);
+	word-wrap: break-word;
+}
+
+#code-csp-warning {
+	position: fixed;
+	top: 0;
+	right: 0;
+	color: white;
+	margin: 16px;
+	text-align: center;
+	font-size: 12px;
+	font-family: sans-serif;
+	background-color:#444444;
+	cursor: pointer;
+	padding: 6px;
+	box-shadow: 1px 1px 1px rgba(0,0,0,.25);
+}
+
+#code-csp-warning:hover {
+	text-decoration: none;
+	background-color:#007acc;
+	box-shadow: 2px 2px 2px rgba(0,0,0,.25);
+}
+
+body.scrollBeyondLastLine {
+	margin-bottom: calc(100vh - 22px);
+}
+
+body.showEditorSelection .code-line {
+	position: relative;
+}
+
+body.showEditorSelection .code-active-line:before,
+body.showEditorSelection .code-line:hover:before {
+	content: "";
+	display: block;
+	position: absolute;
+	top: 0;
+	left: -12px;
+	height: 100%;
+}
+
+body.showEditorSelection li.code-active-line:before,
+body.showEditorSelection li.code-line:hover:before {
+	left: -30px;
+}
+
+.vscode-light.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.15);
+}
+
+.vscode-light.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.40);
+}
+
+.vscode-light.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+.vscode-dark.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.4);
+}
+
+.vscode-dark.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.60);
+}
+
+.vscode-dark.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+.vscode-high-contrast.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 160, 0, 0.7);
+}
+
+.vscode-high-contrast.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 160, 0, 1);
+}
+
+.vscode-high-contrast.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+img {
+	max-width: 100%;
+	max-height: 100%;
+}
+
+a {
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: underline;
+}
+
+a:focus,
+input:focus,
+select:focus,
+textarea:focus {
+	outline: 1px solid -webkit-focus-ring-color;
+	outline-offset: -1px;
+}
+
+hr {
+	border: 0;
+	height: 2px;
+	border-bottom: 2px solid;
+}
+
+h1 {
+	padding-bottom: 0.3em;
+	line-height: 1.2;
+	border-bottom-width: 1px;
+	border-bottom-style: solid;
+}
+
+h1, h2, h3 {
+	font-weight: normal;
+}
+
+table {
+	border-collapse: collapse;
+}
+
+table > thead > tr > th {
+	text-align: left;
+	border-bottom: 1px solid;
+}
+
+table > thead > tr > th,
+table > thead > tr > td,
+table > tbody > tr > th,
+table > tbody > tr > td {
+	padding: 5px 10px;
+}
+
+table > tbody > tr + tr > td {
+	border-top: 1px solid;
+}
+
+blockquote {
+	margin: 0 7px 0 5px;
+	padding: 0 16px 0 10px;
+	border-left-width: 5px;
+	border-left-style: solid;
+}
+
+code {
+	font-family: Menlo, Monaco, Consolas, "Droid Sans Mono", "Courier New", monospace, "Droid Sans Fallback";
+	font-size: 1em;
+	line-height: 1.357em;
+}
+
+body.wordWrap pre {
+	white-space: pre-wrap;
+}
+
+pre:not(.hljs),
+pre.hljs code > div {
+	padding: 16px;
+	border-radius: 3px;
+	overflow: auto;
+}
+
+pre code {
+	color: var(--vscode-editor-foreground);
+	tab-size: 4;
+}
+
+/** Theming */
+
+.vscode-light pre {
+	background-color: rgba(220, 220, 220, 0.4);
+}
+
+.vscode-dark pre {
+	background-color: rgba(10, 10, 10, 0.4);
+}
+
+.vscode-high-contrast pre {
+	background-color: rgb(0, 0, 0);
+}
+
+.vscode-high-contrast h1 {
+	border-color: rgb(0, 0, 0);
+}
+
+.vscode-light table > thead > tr > th {
+	border-color: rgba(0, 0, 0, 0.69);
+}
+
+.vscode-dark table > thead > tr > th {
+	border-color: rgba(255, 255, 255, 0.69);
+}
+
+.vscode-light h1,
+.vscode-light hr,
+.vscode-light table > tbody > tr + tr > td {
+	border-color: rgba(0, 0, 0, 0.18);
+}
+
+.vscode-dark h1,
+.vscode-dark hr,
+.vscode-dark table > tbody > tr + tr > td {
+	border-color: rgba(255, 255, 255, 0.18);
+}
+
+</style>
+
+<style>
+/* Tomorrow Theme */
+/* http://jmblog.github.com/color-themes-for-google-code-highlightjs */
+/* Original theme - https://github.com/chriskempson/tomorrow-theme */
+
+/* Tomorrow Comment */
+.hljs-comment,
+.hljs-quote {
+	color: #8e908c;
+}
+
+/* Tomorrow Red */
+.hljs-variable,
+.hljs-template-variable,
+.hljs-tag,
+.hljs-name,
+.hljs-selector-id,
+.hljs-selector-class,
+.hljs-regexp,
+.hljs-deletion {
+	color: #c82829;
+}
+
+/* Tomorrow Orange */
+.hljs-number,
+.hljs-built_in,
+.hljs-builtin-name,
+.hljs-literal,
+.hljs-type,
+.hljs-params,
+.hljs-meta,
+.hljs-link {
+	color: #f5871f;
+}
+
+/* Tomorrow Yellow */
+.hljs-attribute {
+	color: #eab700;
+}
+
+/* Tomorrow Green */
+.hljs-string,
+.hljs-symbol,
+.hljs-bullet,
+.hljs-addition {
+	color: #718c00;
+}
+
+/* Tomorrow Blue */
+.hljs-title,
+.hljs-section {
+	color: #4271ae;
+}
+
+/* Tomorrow Purple */
+.hljs-keyword,
+.hljs-selector-tag {
+	color: #8959a8;
+}
+
+.hljs {
+	display: block;
+	overflow-x: auto;
+	color: #4d4d4c;
+	padding: 0.5em;
+}
+
+.hljs-emphasis {
+	font-style: italic;
+}
+
+.hljs-strong {
+	font-weight: bold;
+}
+</style>
+
+<style>
+/*
+ * Markdown PDF CSS
+ */
+
+ body {
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif, "Meiryo";
+	padding: 0 12px;
+}
+
+pre {
+	background-color: #f8f8f8;
+	border: 1px solid #cccccc;
+	border-radius: 3px;
+	overflow-x: auto;
+	white-space: pre-wrap;
+	overflow-wrap: break-word;
+}
+
+pre:not(.hljs) {
+	padding: 23px;
+	line-height: 19px;
+}
+
+blockquote {
+	background: rgba(127, 127, 127, 0.1);
+	border-color: rgba(0, 122, 204, 0.5);
+}
+
+.emoji {
+	height: 1.4em;
+}
+
+code {
+	font-size: 14px;
+	line-height: 19px;
+}
+
+/* for inline code */
+:not(pre):not(.hljs) > code {
+	color: #C9AE75; /* Change the old color so it seems less like an error */
+	font-size: inherit;
+}
+
+/* Page Break : use <div class="page"/> or <div class="page"></div> to insert page break
+-------------------------------------------------------- */
+.page {
+	page-break-after: always;
+}
+
+</style>
+
+<script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
+</head>
+<body>
+  <script>
+    mermaid.initialize({
+      startOnLoad: true,
+      theme: document.body.classList.contains('vscode-dark') || document.body.classList.contains('vscode-high-contrast')
+          ? 'dark'
+          : 'default'
+    });
+  </script>
+<h1 id="愛馬仕龍蝦-hermesagent-知識庫">愛馬仕龍蝦 HermesAgent 知識庫</h1>
+<hr>
+<h2 id="一什麼是愛馬仕龍蝦">一、什麼是愛馬仕龍蝦？</h2>
+<p><strong>愛馬仕龍蝦</strong> = HermesAgent（NousResearch 開源 AI Agent）。</p>
+<p>HermesAgent 是通用型 AI Agent 平台（MIT 授權），具備：</p>
+<ul>
+<li>長期記憶（對話累積）</li>
+<li>工具呼叫（MCP、Skills）</li>
+<li>多平台接入（Telegram Polling / LINE Webhook）</li>
+<li>多種 AI 大腦（Claude、OpenAI、Gemini、Ollama 本地）</li>
+<li>Gateway 架構（OpenAI 相容 API，Port 8642）</li>
+</ul>
+<hr>
+<h2 id="二系統需求">二、系統需求</h2>
+<table>
+<thead>
+<tr>
+<th>項目</th>
+<th>Windows</th>
+<th>Mac/Linux</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>作業系統</td>
+<td>Windows 10/11 64位元</td>
+<td>macOS 12+ / Ubuntu 20+</td>
+</tr>
+<tr>
+<td>記憶體</td>
+<td>8 GB（建議 16 GB）</td>
+<td>8 GB+</td>
+</tr>
+<tr>
+<td>磁碟</td>
+<td>5 GB 可用</td>
+<td>5 GB 可用</td>
+</tr>
+<tr>
+<td>特殊需求</td>
+<td>WSL2（選配）</td>
+<td>—</td>
+</tr>
+<tr>
+<td>Node.js</td>
+<td>不需要（本體）</td>
+<td>不需要（本體）</td>
+</tr>
+<tr>
+<td>Node.js（LINE Bridge）</td>
+<td>18+</td>
+<td>18+</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h2 id="三安裝方式">三、安裝方式</h2>
+<h3 id="windows-一鍵安裝精靈">Windows 一鍵安裝精靈</h3>
+<ol>
+<li>下載 <code>HermesAgent-Installer.zip</code>，解壓縮</li>
+<li>對 <code>go.bat</code> 按右鍵 → 以系統管理員身分執行</li>
+<li>選擇 <code>[1] 全部安裝</code>，跟著精靈走</li>
+</ol>
+<p>精靈會自動完成：WSL2 安裝 → HermesAgent 安裝 → Telegram/LINE 設定 → ngrok 設定 → 啟動服務</p>
+<h3 id="mac--linux-一鍵安裝">Mac / Linux 一鍵安裝</h3>
+<pre class="hljs"><code><div>bash install-hermes-mac.sh
+</div></code></pre>
+<p>或手動：</p>
+<pre class="hljs"><code><div><span class="hljs-comment"># 官方安裝（優先）</span>
+curl -fsSL https://hermes-agent.nousresearch.com/install.sh | bash
+<span class="hljs-comment"># 備用 GitHub</span>
+curl -fsSL https://raw.githubusercontent.com/NousResearch/hermes-agent/main/scripts/install.sh | bash
+</div></code></pre>
+<h3 id="windows-手動安裝powershell-系統管理員">Windows 手動安裝（PowerShell 系統管理員）</h3>
+<pre class="hljs"><code><div><span class="hljs-built_in">irm</span> https://raw.githubusercontent.com/NousResearch/hermes<span class="hljs-literal">-agent</span>/main/scripts/install.ps1 | <span class="hljs-built_in">iex</span>
+</div></code></pre>
+<hr>
+<h2 id="四ai-大腦選擇建議">四、AI 大腦選擇建議</h2>
+<table>
+<thead>
+<tr>
+<th>方案</th>
+<th>條件</th>
+<th>費用</th>
+<th>說明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>A - Anthropic（Claude Code OAuth）</td>
+<td>有 Claude Pro/Max 訂閱</td>
+<td>吃月費</td>
+<td>推薦，最聰明</td>
+</tr>
+<tr>
+<td>B - OpenAI OAuth</td>
+<td>有 ChatGPT Plus/Pro 訂閱</td>
+<td>吃月費</td>
+<td>推薦，穩定</td>
+</tr>
+<tr>
+<td>C - Google AI Studio</td>
+<td>免費申請 API Key</td>
+<td><strong>完全免費</strong></td>
+<td>無訂閱首選！Gemma 4 (31B)</td>
+</tr>
+<tr>
+<td>D - Nous Portal</td>
+<td>無訂閱</td>
+<td>免費兩週</td>
+<td>體驗用，MiMo 模型</td>
+</tr>
+<tr>
+<td>E - OpenRouter / API Key</td>
+<td>有 API Key</td>
+<td>按用量</td>
+<td>彈性選擇</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p><strong>建議</strong>：有 Claude Pro 選 A，有 ChatGPT Plus 選 B，都沒有選 <strong>C（Google AI Studio 完全免費）</strong>！<br>
+Google AI Studio 免費 API Key 申請教學：https://www.koc.com.tw/archives/638001</p>
+</blockquote>
+<hr>
+<h2 id="五telegram-設定步驟">五、Telegram 設定步驟</h2>
+<ol>
+<li>Telegram 搜尋 <strong>@BotFather</strong> → <code>/newbot</code> → 取得 Bot Token</li>
+<li>Telegram 搜尋 <strong>@userinfobot</strong> → 取得自己的 User ID（純數字）</li>
+<li>設定到 HermesAgent：<pre class="hljs"><code><div>hermes config <span class="hljs-built_in">set</span> TELEGRAM_BOT_TOKEN 你的Token
+hermes config <span class="hljs-built_in">set</span> TELEGRAM_ALLOWED_USERS 你的UserID
+</div></code></pre>
+</li>
+<li>啟動 Gateway</li>
+<li><strong>⭐ 關鍵步驟</strong>：在 Telegram 找到你的 Bot → 傳 <code>/sethome</code>（必做！否則 AI 不知道回哪裡）</li>
+</ol>
+<hr>
+<h2 id="六line-設定步驟">六、LINE 設定步驟</h2>
+<blockquote>
+<p>⚠️ <strong>注意</strong>：LINE 整合的 Bridge 方案非官方內建，需搭配 Node.js + ngrok 運作。</p>
+</blockquote>
+<ol>
+<li>在 <a href="https://developers.line.biz/">LINE Developers Console</a> 建立 Messaging API Channel</li>
+<li>取得 Channel Secret 和 Channel Access Token</li>
+<li>設定 <code>bridge/.env</code>：<pre class="hljs"><code><div>LINE_CHANNEL_SECRET=...
+LINE_CHANNEL_ACCESS_TOKEN=...
+HERMES_API_URL=http://localhost:8642/v1/chat/completions
+</div></code></pre>
+</li>
+<li>安裝 ngrok，設定 Authtoken</li>
+<li>啟動順序（必須照順序）：
+<ul>
+<li><code>hermes gateway run</code>（或 <code>hermes gateway start</code>）</li>
+<li><code>cd bridge &amp;&amp; npm start</code></li>
+<li><code>ngrok http 3000</code></li>
+</ul>
+</li>
+<li>將 ngrok HTTPS URL + <code>/webhook</code> 填入 LINE Developers Console</li>
+</ol>
+<hr>
+<h2 id="七常用指令速查">七、常用指令速查</h2>
+<h3 id="gateway-管理">Gateway 管理</h3>
+<pre class="hljs"><code><div>hermes gateway run        <span class="hljs-comment"># 前景啟動（Windows 推薦）</span>
+hermes gateway start      <span class="hljs-comment"># 背景啟動（Mac/Linux）</span>
+hermes gateway &amp;          <span class="hljs-comment"># 背景啟動（bash 語法）</span>
+hermes gateway stop       <span class="hljs-comment"># 停止</span>
+hermes gateway status     <span class="hljs-comment"># 查看狀態</span>
+hermes gateway restart    <span class="hljs-comment"># 重啟</span>
+hermes gateway setup      <span class="hljs-comment"># 設定傳訊平台（首次使用）</span>
+</div></code></pre>
+<blockquote>
+<p>⚠️ <strong>重要</strong>：在 hermes 對話介面中重啟 Gateway，請叫 AI 使用「<strong>Restart</strong>」，
+<strong>不要 Stop 再 Start</strong>，否則 Gateway 關掉後無法自動重啟。</p>
+</blockquote>
+<h3 id="設定與診斷">設定與診斷</h3>
+<pre class="hljs"><code><div>hermes setup              <span class="hljs-comment"># 初始設定精靈</span>
+hermes doctor             <span class="hljs-comment"># 環境診斷</span>
+hermes --version          <span class="hljs-comment"># 查看版本</span>
+hermes update             <span class="hljs-comment"># 更新到最新版</span>
+hermes chat               <span class="hljs-comment"># 終端機對話模式</span>
+hermes config show        <span class="hljs-comment"># 顯示設定</span>
+hermes config <span class="hljs-built_in">set</span> KEY VAL <span class="hljs-comment"># 修改設定</span>
+</div></code></pre>
+<h3 id="telegram-聊天指令">Telegram 聊天指令</h3>
+<table>
+<thead>
+<tr>
+<th>指令</th>
+<th>功能</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>/sethome</code></td>
+<td>設定回傳頻道（必做！）</td>
+</tr>
+<tr>
+<td><code>/new</code></td>
+<td>開新對話</td>
+</tr>
+<tr>
+<td><code>/skills</code></td>
+<td>瀏覽技能</td>
+</tr>
+<tr>
+<td><code>/usage</code></td>
+<td>查 Token 用量</td>
+</tr>
+<tr>
+<td><code>/voice on</code></td>
+<td>開啟語音模式</td>
+</tr>
+</tbody>
+</table>
+<h3 id="line-bridge">LINE Bridge</h3>
+<pre class="hljs"><code><div><span class="hljs-built_in">cd</span> bridge &amp;&amp; npm start     <span class="hljs-comment"># 啟動 LINE Bridge</span>
+<span class="hljs-comment"># 測試連線：</span>
+curl http://localhost:3000/test?msg=你好
+</div></code></pre>
+<hr>
+<h2 id="八設定檔位置">八、設定檔位置</h2>
+<blockquote>
+<p>⚠️ <strong>超常見錯誤</strong>：<code>.env</code> 不在 <code>%LOCALAPPDATA%\hermes\</code>，那裡只是安裝 repo！</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>平台</th>
+<th>正確路徑</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Windows</td>
+<td><code>C:\Users\你的名字\.hermes\.env</code></td>
+</tr>
+<tr>
+<td>Mac / Linux</td>
+<td><code>~/.hermes/.env</code></td>
+</tr>
+<tr>
+<td>LINE Bridge</td>
+<td><code>安裝目錄/bridge/.env</code></td>
+</tr>
+</tbody>
+</table>
+<pre class="hljs"><code><div><span class="hljs-comment"># Windows 快速開啟</span>
+notepad <span class="hljs-string">&quot;<span class="hljs-variable">$env:USERPROFILE</span>\.hermes\.env&quot;</span>
+</div></code></pre>
+<hr>
+<h2 id="九架構圖">九、架構圖</h2>
+<pre class="hljs"><code><div>Telegram ←──→ HermesAgent Gateway（Port 8642）
+               ↕ Polling 模式（免 ngrok）
+
+LINE App ──→ LINE 伺服器
+              ↓ Webhook
+           ngrok（公開 URL）
+              ↓
+         LINE Bridge（Node.js, Port 3000）
+              ↓
+         HermesAgent Gateway（Port 8642）
+</div></code></pre>
+<hr>
+<h2 id="九點五hermesagent-v010-重要踩坑實測記錄">九點五、HermesAgent v0.10 重要踩坑（實測記錄）</h2>
+<h3 id="-line-bridge-不能再用-localhost8642">① LINE Bridge 不能再用 localhost:8642</h3>
+<p>v0.10+ 的 <code>hermes gateway</code> <strong>只管 Telegram/Discord/WhatsApp 平台</strong>，不開 HTTP API。
+<code>localhost:8642</code> 在 v0.10 不存在！LINE Bridge 直接對接 AI 供應商（三選一）：</p>
+<pre class="hljs"><code><div># 選項 A：Google AI Studio Gemini（完全免費）
+HERMES_API_URL=https://generativelanguage.googleapis.com/v1beta/openai/chat/completions
+HERMES_API_KEY=你的_Google_AI_Studio_Key
+HERMES_MODEL=gemini-2.5-flash
+
+# 選項 B：OpenAI 直連（有 API Key）
+# HERMES_API_URL=https://api.openai.com/v1/chat/completions
+# HERMES_API_KEY=sk-proj-你的_Key
+# HERMES_MODEL=gpt-4o
+
+# 選項 C：OpenRouter（多模型）
+# HERMES_API_URL=https://openrouter.ai/api/v1/chat/completions
+# HERMES_API_KEY=sk-or-你的_Key
+# HERMES_MODEL=openai/gpt-4o
+</div></code></pre>
+<h3 id="-hermesagent-本身的-openai-設定與-line-bridge-無關">② HermesAgent 本身的 OpenAI 設定（與 LINE Bridge 無關）</h3>
+<p><code>hermes login</code> 只接受 OAuth（<code>nous</code> 或 <code>openai-codex</code>）。</p>
+<ul>
+<li><code>sk-proj-*</code> 金鑰用在 <strong>LINE Bridge 的 .env 完全沒問題</strong></li>
+<li>但用在 <code>hermes login --provider</code> → 必須走 <strong>OpenRouter</strong>（<code>sk-or-*</code>）</li>
+<li>ChatGPT Plus/Pro → <code>hermes login --provider openai-codex</code></li>
+</ul>
+<h3 id="-env-路徑最常見錯誤">③ .env 路徑（最常見錯誤）</h3>
+<p>Runtime 讀 <code>~/.hermes/.env</code>（Windows = <code>C:\Users\你的名字\.hermes\</code>），
+<strong>不是</strong> <code>%LOCALAPPDATA%\hermes\</code>（那只是安裝 venv 的位置）。
+Key 寫錯地方 → <code>hermes doctor</code> 永遠報「no API key found」。</p>
+<h3 id="-installps1-可免-admin-全自動">④ install.ps1 可免 admin 全自動</h3>
+<pre class="hljs"><code><div><span class="hljs-built_in">irm</span> https://claude.ai/install.ps1 | <span class="hljs-built_in">iex</span>  <span class="hljs-comment"># 不需要 -RunAs</span>
+</div></code></pre>
+<p>也支援 <code>-SkipSetup</code> 跳過互動，全自動安裝。</p>
+<h3 id="-windows-npm-被-executionpolicy-擋">⑤ Windows npm 被 ExecutionPolicy 擋</h3>
+<pre class="hljs"><code><div><span class="hljs-built_in">Set-ExecutionPolicy</span> <span class="hljs-literal">-Scope</span> CurrentUser RemoteSigned
+<span class="hljs-comment"># 或直接用 npm.cmd 代替 npm</span>
+</div></code></pre>
+<h2 id="十常見問題排錯">十、常見問題排錯</h2>
+<p><strong>Q：Telegram 機器人沒有回應</strong></p>
+<ol>
+<li>確認 <code>hermes gateway run</code> 有在執行</li>
+<li>確認有傳 <code>/sethome</code> 給機器人</li>
+<li>確認 User ID 在 <code>TELEGRAM_ALLOWED_USERS</code> 中</li>
+<li>執行 <code>hermes doctor</code> 診斷</li>
+</ol>
+<p><strong>Q：LINE Webhook 驗證失敗</strong></p>
+<ol>
+<li>確認三個服務都在執行（Gateway + Bridge + ngrok）</li>
+<li>Webhook URL 格式：<code>https://xxxx.ngrok-free.app/webhook</code></li>
+<li>執行 <code>curl http://localhost:3000/</code> 測試 Bridge</li>
+</ol>
+<p><strong>Q：Windows 中文亂碼</strong></p>
+<pre class="hljs"><code><div>[<span class="hljs-type">System.Environment</span>]::SetEnvironmentVariable(<span class="hljs-string">&#x27;PYTHONUTF8&#x27;</span>, <span class="hljs-string">&#x27;1&#x27;</span>, <span class="hljs-string">&#x27;User&#x27;</span>)
+</div></code></pre>
+<p><strong>Q：<code>hermes gateway status</code> 報 OSError（Windows）</strong>
+編輯 <code>%LOCALAPPDATA%\hermes\hermes-agent\venv\Lib\site-packages\hermes_agent\gateway\status.py</code>，
+將 <code>except (ProcessLookupError, PermissionError):</code> 改為：</p>
+<pre class="hljs"><code><div><span class="hljs-keyword">except</span> (ProcessLookupError, PermissionError, OSError):
+</div></code></pre>
+<p><strong>Q：免費 ngrok URL 每次重開都變</strong></p>
+<ul>
+<li>升級 ngrok 付費版（固定 subdomain）</li>
+<li>或改用 Cloudflare Tunnel（免費固定 URL）</li>
+</ul>
+<p><strong>Q：如何同時使用 Telegram 和 LINE？</strong>
+可以！兩個平台共用同一個 HermesAgent Gateway（Port 8642），同時運作。</p>
+<hr>
+<h2 id="十一三強-ai-cli-工具對比">十一、三強 AI CLI 工具對比</h2>
+<table>
+<thead>
+<tr>
+<th>工具</th>
+<th>主要用途</th>
+<th>安裝指令</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>HermesAgent</strong></td>
+<td>通用管家（Telegram/LINE）</td>
+<td><code>curl -fsSL https://hermes-agent.nousresearch.com/install.sh | bash</code></td>
+</tr>
+<tr>
+<td><strong>Codex CLI</strong></td>
+<td>程式開發助理</td>
+<td><code>npm install -g @openai/codex</code></td>
+</tr>
+<tr>
+<td><strong>Claude Code</strong></td>
+<td>程式開發助理</td>
+<td>Windows: <code>irm https://claude.ai/install.ps1 | iex</code> / Mac: <code>curl -fsSL https://claude.ai/install.sh | bash</code></td>
+</tr>
+</tbody>
+</table>
+<p>三個工具互補，可同時使用：</p>
+<ul>
+<li><strong>開發時</strong>：Codex CLI 或 Claude Code 在終端機協助寫程式</li>
+<li><strong>日常使用</strong>：HermesAgent 透過 Telegram/LINE 手機操作</li>
+</ul>
+<hr>
+<h2 id="十二延伸資源">十二、延伸資源</h2>
+<ul>
+<li>HermesAgent 官網：https://hermes-agent.nousresearch.com</li>
+<li>GitHub：https://github.com/NousResearch/hermes-agent</li>
+</ul>
+
+</body>
+</html>
